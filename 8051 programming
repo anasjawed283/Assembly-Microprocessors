@@ -1,0 +1,21 @@
+Write a program for 8051 to transfer your name of 9000 power rate, 8-bit data and 1 stop bit and do this continuously.
+
+ORG 0000H
+MOV TMOD,#20H
+MOV TH1, # -3
+MOV SCON, #50H
+SETB TR1
+AGAIN: MOV A, #”A”
+ACALL TRANS
+:MOV A, #”N”
+ACALL TRANS
+MOV A, #”A”
+ACALL TRANS
+MOV A, #”S”
+ACALL TRANS
+SJMP AGAIN
+TRANS: MOV SBUF, A
+HERE: JNB T1, HERE
+CLR T1
+RET
+END
