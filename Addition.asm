@@ -1,4 +1,4 @@
-Address   Assembly-Code
+//Address   Assembly-Code
 1000     MOV AX, 1111H
 1004     MOV BX, 2222H
 1008     ADD AX, BX
